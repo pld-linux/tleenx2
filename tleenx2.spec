@@ -10,6 +10,7 @@ License:	GPL
 Group:		Applications/Communications
 #ftp://ftp.sourceforge.net/pub/sourceforge/tleenx/TleenX2-%{snap}.tar.gz
 Source0:	%{name}-%{snap}.tar.bz2
+# Source0-md5:	3e78f79390612bc4c8440c9fcd154189
 Patch0:		%{name}-maninst.patch
 Patch1:		%{name}-pixmap.patch
 URL:		http://tleenx.sourceforge.net/
