@@ -1,10 +1,10 @@
-# KDE Config File  
 [Desktop Entry]
-Type=Application
+Name=TleenX2
+Comment=Tlen.pl client for gtk+2
+Comment[pl]=Klient Tlen.pl dla gtk+2
 Exec=tleenx2 
 Icon=/usr/share/tleenx2/pixmaps/tleenx.png
 MiniIcon=/usr/share/tleenx2/pixmaps/tleenx.png
-Comment=Tlen.pl client for gtk+2
-Comment[pl]=Klient Tlen.pl dla gtk+2
 Terminal=0
-Name=TleenX2
+Type=Application
+# vi: encoding=utf-8
