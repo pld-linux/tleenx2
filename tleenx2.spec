@@ -5,7 +5,7 @@ Summary:	Tlen.pl client for gtk+2
 Summary(pl):	Klient Tlen.pl dla gtk+2
 Name:		tleenx2
 Version:	0
-Release:	0.%{snap}.1
+Release:	0.%{snap}.2
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/tleenx/TleenX2-%{snap}.tar.gz
