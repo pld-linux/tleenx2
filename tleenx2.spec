@@ -12,6 +12,7 @@ Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/tleenx/TleenX2-%{snap}.tar.gz
 # Source0-md5:	80d632411aa51f7153f371cd0c989316
 Source1:	http://tleenx.sourceforge.net/download/sounds/default.tar.gz
 # Source1-md5:	964761f483c1a0a1421ca6ebc0a5ed22
+Source2:	%{name}.desktop
 Patch0:		%{name}-maninst.patch
 Patch1:		%{name}-shared.patch
 URL:		http://tleenx.sourceforge.net/
@@ -48,7 +49,9 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
+install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ \
+	$RPM_BUILD_ROOT%{_datadir}/applnk/Network/Communications/
+install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/applnk/Network/Communications/%{name}.desktop
 install default/* $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
 
 %clean
@@ -58,4 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%{_datadir}/applnk/Network/Communications/%{name}.desktop
 %{_mandir}/man?/*
