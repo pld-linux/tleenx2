@@ -13,6 +13,7 @@ Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/tleenx/TleenX2-%{snap}.tar.gz
 Source1:	http://tleenx.sourceforge.net/download/sounds/default.tar.gz
 # Source1-md5:	964761f483c1a0a1421ca6ebc0a5ed22
 Patch0:		%{name}-maninst.patch
+Patch1:		%{name}-shared.patch
 URL:		http://tleenx.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -32,8 +33,14 @@ Jest rozpowszechniany na licencji GPL.
 %prep
 %setup -q -n TleenX2-%{snap} -a1
 %patch0 -p1
+%patch1 -p1
 
 %build
+rm -f missing
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
