@@ -1,8 +1,8 @@
 
 %define		snap 20040214
 
-Summary:	Tlen.pl client for gtk+2
-Summary(pl):	Klient Tlen.pl dla gtk+2
+Summary:	Tlen.pl client for GTK+2
+Summary(pl):	Klient Tlen.pl dla GTK+2
 Name:		tleenx2
 Version:	0
 Release:	0.%{snap}.2
