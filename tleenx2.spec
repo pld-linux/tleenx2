@@ -17,9 +17,8 @@ URL:		http://tleenx.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel
-BuildRequires:	libtlen
+BuildRequires:	libtlen-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 TleenX is a Tlen.pl client written for Linux users. It is distributed
