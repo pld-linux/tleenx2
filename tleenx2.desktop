@@ -1,0 +1,9 @@
+# KDE Config File  
+[Desktop Entry]
+Type=Application
+Exec=tleenx2 
+Icon=/usr/share/tleenx2/pixmaps/tleenx.png
+MiniIcon=/usr/share/tleenx2/pixmaps/tleenx.png
+Comment=Klient Tlen.pl dla gtk+2
+Terminal=0
+Name=TleenX2
