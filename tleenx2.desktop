@@ -5,6 +5,6 @@ Comment[pl]=Klient Tlen.pl dla gtk+2
 Exec=tleenx2 
 Icon=/usr/share/tleenx2/pixmaps/tleenx.png
 MiniIcon=/usr/share/tleenx2/pixmaps/tleenx.png
-Terminal=0
+Terminal=false
 Type=Application
 # vi: encoding=utf-8
