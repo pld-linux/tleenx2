@@ -17,7 +17,6 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	libtlen
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _prefix         /usr/X11R6
 
 %description
 TleenX is a Tlen.pl client written for Linux users. It is distributed
