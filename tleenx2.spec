@@ -16,6 +16,7 @@ Source2:	%{name}.desktop
 Patch0:		%{name}-maninst.patch
 Patch1:		%{name}-shared.patch
 URL:		http://tleenx.sourceforge.net/
+BuildRequires:	XFree86-libs >= 4.3.99.15
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel
