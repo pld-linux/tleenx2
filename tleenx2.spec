@@ -11,6 +11,7 @@ Group:		Applications/Communications
 #ftp://ftp.sourceforge.net/pub/sourceforge/tleenx/TleenX2-%{snap}.tar.gz
 Source0:	%{name}-%{snap}.tar.bz2
 Patch0:		%{name}-maninst.patch
+Patch1:		%{name}-pixmap.patch
 URL:		http://tleenx.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -30,6 +31,7 @@ Jest rozpowszechniany na licencji GPL.
 %prep
 %setup -q -n %{name}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure
