@@ -1,5 +1,5 @@
 
-%define		snap 20030508
+%define		snap 20031002
 
 Summary:	Tlen.pl client for gtk+2
 Summary(pl):	Klient Tlen.pl dla gtk+2
@@ -8,11 +8,9 @@ Version:	0
 Release:	0.%{snap}
 License:	GPL
 Group:		Applications/Communications
-#ftp://ftp.sourceforge.net/pub/sourceforge/tleenx/TleenX2-%{snap}.tar.gz
-Source0:	%{name}-%{snap}.tar.bz2
-# Source0-md5:	3e78f79390612bc4c8440c9fcd154189
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/tleenx/TleenX2-%{snap}.tar.gz
+# Source0-md5:	80d632411aa51f7153f371cd0c989316
 Patch0:		%{name}-maninst.patch
-Patch1:		%{name}-pixmap.patch
 URL:		http://tleenx.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -29,9 +27,8 @@ TleenX to klient tlen.pl napisany z my¶l± o u¿ytkownikach Linuksa.
 Jest rozpowszechniany na licencji GPL.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n TleenX2-%{snap}
 %patch0 -p1
-%patch1 -p1
 
 %build
 %configure
