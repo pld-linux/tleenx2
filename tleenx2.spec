@@ -1,4 +1,6 @@
-%define		snap 20021118
+
+%define		snap 20021123
+
 Summary:	Tlen.pl client for gtk+2
 Summary(pl):	Klient Tlen.pl dla gtk+2
 Name:		tleenx2
@@ -44,3 +46,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%{_mandir}/*
