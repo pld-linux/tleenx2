@@ -5,7 +5,7 @@ Summary:	Tlen.pl client for gtk+2
 Summary(pl):	Klient Tlen.pl dla gtk+2
 Name:		tleenx2
 Version:	0
-Release:	0.%{snap}
+Release:	0.%{snap}.1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/tleenx/TleenX2-%{snap}.tar.gz
@@ -19,7 +19,7 @@ URL:		http://tleenx.sourceforge.net/
 BuildRequires:	XFree86-libs >= 4.3.99.15
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	libtlen-devel
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -38,7 +38,6 @@ Jest rozpowszechniany na licencji GPL.
 %patch1 -p1
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -48,12 +47,13 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ \
-	$RPM_BUILD_ROOT%{_datadir}/applnk/Network/Communications/
-install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/applnk/Network/Communications/%{name}.desktop
-install default/* $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
+
+install -d $RPM_BUILD_ROOT{%{_datadir}/%{name}/sounds,%{_desktopdir}}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
+install default/* $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,5 +62,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_datadir}/applnk/Network/Communications/%{name}.desktop
+%{_desktopdir}/%{name}.desktop
 %{_mandir}/man?/*
