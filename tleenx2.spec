@@ -19,7 +19,7 @@ URL:		http://tleenx.sourceforge.net/
 BuildRequires:	XFree86-libs >= 4.3.99.15
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libtlen-devel
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
