@@ -1,0 +1,95 @@
+diff -urN tleenx2.orig/Makefile.am tleenx2/Makefile.am
+--- tleenx2.orig/Makefile.am	Thu May  8 12:46:14 2003
++++ tleenx2/Makefile.am	Thu May  8 17:26:02 2003
+@@ -17,6 +17,16 @@
+ 	    fi \
+ 	  done \
+ 	fi
++install-man-local:
++	@$(NORMAL_INSTALL)
++	if test -f $(srcdir)/*.1; then \
++	  $(mkinstalldirs) $(DESTDIR)$(mandir)/man1; \
++	  for mans in $(srcdir)/*.1; do \
++	    if test -f $$mans; then \
++	      $(INSTALL_DATA) $$mans $(DESTDIR)$(mandir)/man1; \
++	    fi \
++	  done \
++	fi
+ 
+ dist-hook:
+ 	if test -d pixmaps; then \
+@@ -27,4 +37,12 @@
+ 	    fi \
+ 	  done \
+ 	fi
++         if test -f *.1; then \
++          mkdir $(distdir)/man/man1; \
++          for mans in $(srcdir)/*.1; do \
++            if test -f $$mans; then \
++              cp -p $$mans $(distdir)/man/man1; \
++            fi \
++          done \
++        fi
+ 
+diff -urN tleenx2.orig/Makefile.in tleenx2/Makefile.in
+--- tleenx2.orig/Makefile.in	Thu May  8 12:46:14 2003
++++ tleenx2/Makefile.in	Thu May  8 18:49:05 2003
+@@ -327,7 +327,7 @@
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am install-man
+ 
+ installcheck: installcheck-recursive
+ install-strip:
+@@ -369,7 +369,7 @@
+ 
+ install-info: install-info-recursive
+ 
+-install-man:
++install-man: install-man-local
+ 
+ installcheck-am:
+ 
+@@ -392,7 +392,7 @@
+ 	info-recursive install install-am install-data install-data-am \
+ 	install-data-local install-data-recursive install-exec \
+ 	install-exec-am install-exec-recursive install-info \
+-	install-info-am install-info-recursive install-man \
++	install-info-am install-info-recursive install-man install-man-local\
+ 	install-recursive install-strip installcheck installcheck-am \
+ 	installdirs installdirs-am installdirs-recursive \
+ 	maintainer-clean maintainer-clean-generic \
+@@ -412,6 +412,16 @@
+ 	    fi \
+ 	  done \
+ 	fi
++install-man-local:
++	@$(NORMAL_INSTALL)
++	if test -f $(srcdir)/*.1; then \
++	  $(mkinstalldirs) $(DESTDIR)$(mandir)/man1; \
++	  for mans in $(srcdir)/*.1; do \
++	    if test -f $$mans; then \
++	      $(INSTALL_DATA) $$mans $(DESTDIR)$(mandir)/man1; \
++	    fi \
++	  done \
++	fi
+ 
+ dist-hook:
+ 	if test -d pixmaps; then \
+@@ -422,6 +432,14 @@
+ 	    fi \
+ 	  done \
+ 	fi
++	if test -f *.1; then \
++	  mkdir $(distdir)/man/man1; \
++	  for mans in $(srcdir)/*.1; do \
++	    if test -f $$mans; then \
++	      cp -p $$mans $(distdir)/man/man1; \
++   	    fi \
++	  done \
++	fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
