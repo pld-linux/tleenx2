@@ -6,6 +6,6 @@ diff -urN TleenX2-20031002.orig/src/Makefile.am TleenX2-20031002/src/Makefile.am
  
  tleenx2_LDADD = @PACKAGE_LIBS@  ../jabby/libjabby.a ../iksemel/libiksemel.a \
 -	/usr/X11R6/lib/libXss.a
-+	/usr/X11R6/lib/libXss.so.1
++	-lXss
  tleenx2_LDFLAGS = `pkg-config --libs gthread-2.0`
  tleenx2_CFLAGS = -I../jabby -I../iksemel
