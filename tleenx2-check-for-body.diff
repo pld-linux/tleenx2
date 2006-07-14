@@ -1,0 +1,22 @@
+--- src/utils.c.orig	2006-02-06 01:36:59.000000000 +0100
++++ src/utils.c	2006-03-28 17:15:42.000000000 +0200
+@@ -703,6 +703,8 @@
+           }
+ 
+         case TLEN_EVENT_MESSAGE:
++		  if(!event->message->body) 
++			  break;
+           message_show(
+                        event->message->from,
+                        event->message->body,
+--- src/jabber.c.orig	2006-02-06 01:36:59.000000000 +0100
++++ src/jabber.c	2006-03-28 17:18:14.000000000 +0200
+@@ -297,7 +297,7 @@
+         jabber_get_agents();
+       break;
+     case JABBY_EVENT_MESSAGE:
+-      {
++      if(event->event.message->body) {
+         gint type;
+ 
+         type = event->event.message->type;
