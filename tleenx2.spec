@@ -13,6 +13,7 @@ Source0:	http://dl.sourceforge.net/tleenx/TleenX2-%{snap}.tar.gz
 Source1:	http://tleenx.sourceforge.net/download/sounds/default.tar.gz
 # Source1-md5:	964761f483c1a0a1421ca6ebc0a5ed22
 Source2:	%{name}.desktop
+Patch0:		%{name}-check-for-body.diff
 URL:		http://tleenx.sourceforge.net/
 BuildRequires:	XFree86-libs >= 4.3.99.15
 BuildRequires:	autoconf
@@ -32,6 +33,7 @@ Jest rozpowszechniany na licencji GPL.
 
 %prep
 %setup -q -n TleenX2-%{snap} -a1
+%patch0 -p0
 
 %build
 %{__aclocal}
