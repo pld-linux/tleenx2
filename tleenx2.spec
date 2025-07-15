@@ -33,7 +33,7 @@ Jest rozpowszechniany na licencji GPL.
 
 %prep
 %setup -q -n TleenX2-%{snap} -a1
-%patch0 -p0
+%patch -P0 -p0
 
 %build
 %{__aclocal}
